@@ -2,8 +2,6 @@ from . import Expense
 
 
 
-
-
 class BudgetList:
     def __init__(self,budget):
         self.budget = budget
@@ -11,6 +9,21 @@ class BudgetList:
         self.expenses = []
         self.sum_overages = 0
         self.overages = []
+
+
+    def __len__(self):
+        return self.expenses.sum() + self.overages.sum()
+    
+
+    def append(self,item):
+        if (self.sum_expenses + item) < self.budget:
+            self.expenses.append(item)
+            self.sum_expenses += (item)
+        else:
+            self.overages.append(item)
+            self.sum_overages += (item)
+
+    
 
 def main():
     myBudgetList = BudgetList(1200)
@@ -21,22 +34,12 @@ def main():
 
     for expense in expenses.list:
         myBudgetList.append(expense.amount)
-
-    print( myBudgetList.len().str())
+        
 
 if __name__ == '__main__':
     main()
 
-def append(self,item):
-    if self.sum_expenses & item < self.budget:
-        self.expenses.append(item)
-        self.sum_expenses.append(item)
-    else:
-        self.overages.append(item)
-        self.sum_overages.append(item)
 
-def __len__(self):
-    return self.expenses.sum() + self.overages.sum()
 
 
 
