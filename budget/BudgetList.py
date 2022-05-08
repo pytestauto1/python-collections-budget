@@ -29,7 +29,12 @@ class BudgetList:
         return self
     
     def __next__(self):
-        pass
+        try:
+            return self.iter_e.__next__()
+        except StopIteration as stop:
+            return self.iter_o.__next__()
+            
+
 
 
     
