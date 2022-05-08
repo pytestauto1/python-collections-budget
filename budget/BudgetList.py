@@ -24,8 +24,8 @@ class BudgetList:
             self.sum_overages += (item)
     
     def __iter__(self):
-        self.iter_e(self.expenses)
-        self.iter_o(self.overages)
+        self.iter_e = iter(self.expenses)
+        self.iter_o = iter(self.overages)
         return self
 
 
