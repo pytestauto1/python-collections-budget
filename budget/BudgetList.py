@@ -1,4 +1,5 @@
 from . import Expense 
+import matplotlib.pyplot as plt
 
 
 
@@ -52,7 +53,9 @@ def main():
     print('The count of all expenses: ' + str(len(myBudgetList)))
     for entry in myBudgetList:
         print(entry)
-
+    
+    fix,ax = plt.subplots()
+    
 if __name__ == '__main__':
     main()
 
